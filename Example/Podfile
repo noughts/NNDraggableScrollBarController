@@ -1,8 +1,10 @@
+source 'https://github.com/noughts/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
-use_frameworks!
+
 
 target 'NNDraggableScrollBarController_Example', :exclusive => true do
   pod "NNDraggableScrollBarController", :path => "../"
+  pod "NBULog"
 end
 
 target 'NNDraggableScrollBarController_Tests', :exclusive => true do

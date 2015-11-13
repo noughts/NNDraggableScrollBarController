@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		328A5731131E9F9FA6CFDB07 /* Pods_NNDraggableScrollBarController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA838C1EF7D57D2E8A2DEFF2 /* Pods_NNDraggableScrollBarController_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		52705B3AC0F279ECA852627F /* Pods_NNDraggableScrollBarController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A6358254085929D17DC904 /* Pods_NNDraggableScrollBarController_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -22,6 +20,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		69F6A4D98EE82253353E887A /* libPods-NNDraggableScrollBarController_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BA496CB772041066109EA5 /* libPods-NNDraggableScrollBarController_Tests.a */; };
+		7979838E261418F30FACF648 /* libPods-NNDraggableScrollBarController_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 392AEA89601DEEE5921957F6 /* libPods-NNDraggableScrollBarController_Example.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -36,10 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		392AEA89601DEEE5921957F6 /* libPods-NNDraggableScrollBarController_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NNDraggableScrollBarController_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9F81AEE2DFE376BE3E0227 /* Pods-NNDraggableScrollBarController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNDraggableScrollBarController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-NNDraggableScrollBarController_Example/Pods-NNDraggableScrollBarController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		43A6358254085929D17DC904 /* Pods_NNDraggableScrollBarController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNDraggableScrollBarController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF4A59BB30FC7DFC189D793 /* Pods-NNDraggableScrollBarController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNDraggableScrollBarController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NNDraggableScrollBarController_Tests/Pods-NNDraggableScrollBarController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* NNDraggableScrollBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = NNDraggableScrollBarController.app; path = NNDraggableScrollBarController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* NNDraggableScrollBarController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNDraggableScrollBarController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -52,16 +52,16 @@
 		6003F5A5195388D20070C39A /* NNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* NNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = NNDraggableScrollBarController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* NNDraggableScrollBarController_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNDraggableScrollBarController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		72BA496CB772041066109EA5 /* libPods-NNDraggableScrollBarController_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NNDraggableScrollBarController_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4558A07BB7E06EBB1CD048 /* NNDraggableScrollBarController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NNDraggableScrollBarController.podspec; path = ../NNDraggableScrollBarController.podspec; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9C36E6DA0F24EC7F1AEF540B /* Pods-NNDraggableScrollBarController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNDraggableScrollBarController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NNDraggableScrollBarController_Tests/Pods-NNDraggableScrollBarController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		AA838C1EF7D57D2E8A2DEFF2 /* Pods_NNDraggableScrollBarController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNDraggableScrollBarController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD01AF62B0CAC857604FC4BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C3C4F9DEF0F9C5DE750B94B2 /* Pods-NNDraggableScrollBarController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNDraggableScrollBarController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NNDraggableScrollBarController_Example/Pods-NNDraggableScrollBarController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CAFB4E8537758796A06E3526 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				328A5731131E9F9FA6CFDB07 /* Pods_NNDraggableScrollBarController_Example.framework in Frameworks */,
+				7979838E261418F30FACF648 /* libPods-NNDraggableScrollBarController_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				52705B3AC0F279ECA852627F /* Pods_NNDraggableScrollBarController_Tests.framework in Frameworks */,
+				69F6A4D98EE82253353E887A /* libPods-NNDraggableScrollBarController_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +108,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* NNDraggableScrollBarController.app */,
-				6003F5AE195388D20070C39A /* Tests.xctest */,
+				6003F58A195388D20070C39A /* NNDraggableScrollBarController_Example.app */,
+				6003F5AE195388D20070C39A /* NNDraggableScrollBarController_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,8 +121,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				AA838C1EF7D57D2E8A2DEFF2 /* Pods_NNDraggableScrollBarController_Example.framework */,
-				43A6358254085929D17DC904 /* Pods_NNDraggableScrollBarController_Tests.framework */,
+				392AEA89601DEEE5921957F6 /* libPods-NNDraggableScrollBarController_Example.a */,
+				72BA496CB772041066109EA5 /* libPods-NNDraggableScrollBarController_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,7 +204,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				92866313E1B91682396AAAAD /* Embed Pods Frameworks */,
 				CEF63C7FA287EFACBE089277 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -213,7 +212,7 @@
 			);
 			name = NNDraggableScrollBarController_Example;
 			productName = NNDraggableScrollBarController;
-			productReference = 6003F58A195388D20070C39A /* NNDraggableScrollBarController.app */;
+			productReference = 6003F58A195388D20070C39A /* NNDraggableScrollBarController_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* NNDraggableScrollBarController_Tests */ = {
@@ -224,7 +223,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				FCC0672280B1C8C0457CA839 /* Embed Pods Frameworks */,
 				E0077FDAF42D4388A6BD2084 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -234,7 +232,7 @@
 			);
 			name = NNDraggableScrollBarController_Tests;
 			productName = NNDraggableScrollBarControllerTests;
-			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* NNDraggableScrollBarController_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -308,21 +306,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		92866313E1B91682396AAAAD /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NNDraggableScrollBarController_Example/Pods-NNDraggableScrollBarController_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CEF63C7FA287EFACBE089277 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,21 +349,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NNDraggableScrollBarController_Tests/Pods-NNDraggableScrollBarController_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FCC0672280B1C8C0457CA839 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NNDraggableScrollBarController_Tests/Pods-NNDraggableScrollBarController_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

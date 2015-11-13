@@ -1,7 +1,24 @@
 PODS:
-  - NNDraggableScrollBarController (0.1.0)
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
+  - FrameAccessor (2.0)
+  - KVOController (1.0.3)
+  - NBULog (1.2.4):
+    - CocoaLumberjack (>= 2.0.0)
+  - NBULogStub (0.1.2)
+  - NNDraggableScrollBarController (0.1.0):
+    - FrameAccessor
+    - KVOController
+    - NBULogStub
 
 DEPENDENCIES:
+  - NBULog
   - NNDraggableScrollBarController (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,6 +26,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NNDraggableScrollBarController: fb27734fd9a844404d29465cdcd4ac9c6189f0d0
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
+  KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
+  NBULog: 4003be6706b97a7e376ab4171c666ac7c2fbc2b2
+  NBULogStub: 398fa3535e3b368d6f1cb3b32c2ac0cb81cf350c
+  NNDraggableScrollBarController: ecef46e23b77b91eb8191c0a2ff2d48d3053a192
 
 COCOAPODS: 0.38.2
