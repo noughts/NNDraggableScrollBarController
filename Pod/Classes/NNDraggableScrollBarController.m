@@ -31,7 +31,7 @@
 		_knob_iv.layer.zPosition = 1000;
 		_knob_iv.userInteractionEnabled = YES;
 		_scrollView.showsVerticalScrollIndicator = NO;
-		[self flashKnob];
+		_knob_iv.alpha = 0;
 		
 		UIPanGestureRecognizer* gr = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onKnobPan:)];
 		[_knob_iv addGestureRecognizer:gr];
