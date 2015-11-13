@@ -1,0 +1,14 @@
+PODS:
+  - NNDraggableScrollBarController (0.1.0)
+
+DEPENDENCIES:
+  - NNDraggableScrollBarController (from `../`)
+
+EXTERNAL SOURCES:
+  NNDraggableScrollBarController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NNDraggableScrollBarController: fb27734fd9a844404d29465cdcd4ac9c6189f0d0
+
+COCOAPODS: 0.38.2
