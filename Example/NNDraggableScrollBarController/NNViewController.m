@@ -20,7 +20,7 @@
 	_tableView.contentInset = _tableView.scrollIndicatorInsets;
 	
 	UIImage* knob_img = [UIImage imageNamed:@"grid_scrollBarKnob"];
-	_scrollBarController = [[PSDraggableScrollBarController alloc] initWithScrollView:_tableView knobImage:knob_img];
+	_scrollBarController = [[NNDraggableScrollBarController alloc] initWithScrollView:_tableView knobImage:knob_img];
 }
 
 
