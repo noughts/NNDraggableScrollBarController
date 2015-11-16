@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DB004561BF5B5AC00AB292C /* grid_scrollBarKnob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB004551BF5B5AC00AB292C /* grid_scrollBarKnob@2x.png */; settings = {ASSET_TAGS = (); }; };
+		4DB004561BF5B5AC00AB292C /* grid_scrollBarKnob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB004551BF5B5AC00AB292C /* grid_scrollBarKnob@2x.png */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -208,6 +208,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				CEF63C7FA287EFACBE089277 /* Copy Pods Resources */,
+				345F6F790A43C06E53921F47 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +228,7 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				E0077FDAF42D4388A6BD2084 /* Copy Pods Resources */,
+				96465811FBE4601395AF9FC9 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +297,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		345F6F790A43C06E53921F47 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NNDraggableScrollBarController_Example/Pods-NNDraggableScrollBarController_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8F21ADB68D9CB618FCB965F4 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +325,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		96465811FBE4601395AF9FC9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NNDraggableScrollBarController_Tests/Pods-NNDraggableScrollBarController_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CEF63C7FA287EFACBE089277 /* Copy Pods Resources */ = {

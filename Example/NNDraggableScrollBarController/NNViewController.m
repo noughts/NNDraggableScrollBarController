@@ -21,6 +21,7 @@
 	
 	UIImage* knob_img = [UIImage imageNamed:@"grid_scrollBarKnob"];
 	_scrollBarController = [[NNDraggableScrollBarController alloc] initWithScrollView:_tableView knobImage:knob_img];
+    _scrollBarController.dataSource = self;
 }
 
 
@@ -29,6 +30,11 @@
 	[_tableView flashScrollIndicators];
 }
 
+
+-(NSString*)scrollBarController:(NNDraggableScrollBarController *)controller titleForPosition:(CGFloat)position{
+    NSIndexPath* indexPath = [_tableView indexPathForRowAtPoint:CGPointMake(0, position)];
+    return indexPath.description;
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 	return 200;
