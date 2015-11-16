@@ -58,6 +58,7 @@
     [_scrollView.superview addSubview:_label];
     _label.layer.zPosition = 1000;
     _label.userInteractionEnabled = NO;
+    _label.alpha = 0;
     
 }
 
@@ -185,6 +186,7 @@
     _isKnobHideTimerCancelled = YES;
 	[UIView animateWithDuration:0.25 animations:^{
 		_knob_iv.alpha = 1;
+        _label.alpha = 1;
 	}];
 }
 
@@ -197,6 +199,7 @@
         }
        	[UIView animateWithDuration:0.25 animations:^{
             _knob_iv.alpha = 0;
+            _label.alpha = 0;
         }];
     });
 
