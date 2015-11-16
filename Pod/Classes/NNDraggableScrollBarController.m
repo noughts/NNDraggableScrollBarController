@@ -16,6 +16,7 @@
 	FBKVOController* _kvoController;
 	UIImageView* _knob_iv;
 	BOOL _knobDragging;
+    BOOL _isKnobHideTimerCancelled;
 }
 
 -(instancetype)initWithScrollView:(UIScrollView*)scrollView knobImage:(UIImage*)knobImage{
@@ -45,6 +46,7 @@
 -(void)onKnobPan:(UIPanGestureRecognizer*)gr{
 	switch (gr.state) {
 		case UIGestureRecognizerStateBegan:
+            _isKnobHideTimerCancelled = YES;
 			_knobDragging = YES;
 			[_scrollView setContentOffset:_scrollView.contentOffset animated:NO];/// スクロールを止める
 			break;
@@ -142,6 +144,7 @@
 
 
 -(void)showKnob{
+    _isKnobHideTimerCancelled = YES;
 	[UIView animateWithDuration:0.25 animations:^{
 		_knob_iv.alpha = 1;
 	}];
@@ -149,9 +152,16 @@
 
 
 -(void)hideKnob{
-	[UIView animateWithDuration:0.25 animations:^{
-		_knob_iv.alpha = 0;
-	}];
+    _isKnobHideTimerCancelled = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        if( _isKnobHideTimerCancelled ){
+            return;
+        }
+       	[UIView animateWithDuration:0.25 animations:^{
+            _knob_iv.alpha = 0;
+        }];
+    });
+
 }
 
 
