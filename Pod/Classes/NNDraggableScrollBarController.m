@@ -133,7 +133,8 @@
 	UIEdgeInsets knobEdgeInset = [self knobEdgeInsets];
 	
 	CGFloat posX = screenSize.width - _knob_iv.width/2;
-	CGFloat pct = (_scrollView.contentOffset.y + _scrollView.contentInset.top) / [self scrolllViewBottomEnd];
+    CGFloat scrollViewPosY = (_scrollView.contentOffset.y + _scrollView.contentInset.top);
+	CGFloat pct = scrollViewPosY / [self scrolllViewBottomEnd];
 	
 	CGFloat posY = knobEdgeInset.top + ([self knobScrollHeight] * pct);
 	if( posY < knobEdgeInset.top ){
@@ -146,7 +147,7 @@
     
     /// ラベルの位置も更新
     if( [_dataSource respondsToSelector:@selector(scrollBarController:titleForPosition:)] ){
-        NSString* title = [_dataSource scrollBarController:self titleForPosition:_scrollView.contentOffset.y];
+        NSString* title = [_dataSource scrollBarController:self titleForPosition:scrollViewPosY];
         [self updateLabelWithString:[NSString stringWithFormat:@"%@",title]];
     } else {
         [self hideLabel];
