@@ -59,7 +59,6 @@
     _label.layer.zPosition = 1000;
     _label.userInteractionEnabled = NO;
     _label.alpha = 0;
-    
 }
 
 
@@ -78,6 +77,7 @@
 
 
 -(void)onKnobPan:(UIPanGestureRecognizer*)gr{
+    NBULogInfo(@"%@", @(gr.state));
 	switch (gr.state) {
 		case UIGestureRecognizerStateBegan:
             _isKnobHideTimerCancelled = YES;
@@ -87,6 +87,7 @@
 		case UIGestureRecognizerStateCancelled:
 		case UIGestureRecognizerStateEnded:
 			_knobDragging = NO;
+            _isKnobHideTimerCancelled = NO;
 		default:
 			break;
 	}
@@ -158,6 +159,7 @@
 
 
 -(void)onScrollViewScroll:(NSDictionary*)sender{
+    NBULogInfo(@"%@", sender);
 	if( _scrollView.dragging == 1 ){
 		[self showKnob];
 	} else {
@@ -183,6 +185,7 @@
 
 
 -(void)showKnob{
+    NBULogInfo(@"show");
     _isKnobHideTimerCancelled = YES;
 	[UIView animateWithDuration:0.25 animations:^{
 		_knob_iv.alpha = 1;
@@ -192,6 +195,7 @@
 
 
 -(void)hideKnob{
+    NBULogInfo(@"hide");
     _isKnobHideTimerCancelled = NO;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         if( _isKnobHideTimerCancelled ){
