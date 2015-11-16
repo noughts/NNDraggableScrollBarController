@@ -41,7 +41,7 @@
 //    NBULogInfo(@"_noMoveFrameCounter = %@", @(_noMoveFrameCounter));
     _noMoveFrameCounter++;
     if( _noMoveFrameCounter == 30*1.5 ){
-        [self hideKnob];
+        [self hideKnobAndLabel];
     }
 }
 
@@ -91,7 +91,8 @@
 	switch (gr.state) {
 		case UIGestureRecognizerStateBegan:
 			_knobDragging = YES;
-			[_scrollView setContentOffset:_scrollView.contentOffset animated:NO];/// スクロールを止める
+			[_scrollView setContentOffset:_scrollView.contentOffset animated:NO];/// 現在の慣性スクロールを止める
+            [self showLabel];
 			break;
 		case UIGestureRecognizerStateCancelled:
 		case UIGestureRecognizerStateEnded:
@@ -170,6 +171,10 @@
     [self showKnob];
     _noMoveFrameCounter = 0;
 	[self updateKnobPosition];
+    if( _scrollView.tracking ){
+        /// スクロールビューをドラッグしていたらラベルは消す
+        [self hideLabel];
+    }
 }
 
 -(void)flashKnob{
@@ -185,18 +190,30 @@
 	}];
 }
 
+-(void)hideKnobAndLabel{
+    [UIView animateWithDuration:0.25 animations:^{
+        _knob_iv.alpha = 0;
+        _label.alpha = 0;
+    }];
+}
+
 
 -(void)showKnob{
 	[UIView animateWithDuration:0.25 animations:^{
 		_knob_iv.alpha = 1;
-        _label.alpha = 1;
 	}];
 }
 
 
--(void)hideKnob{
+
+-(void)showLabel{
     [UIView animateWithDuration:0.25 animations:^{
-        _knob_iv.alpha = 0;
+        _label.alpha = 1;
+    }];
+}
+
+-(void)hideLabel{
+    [UIView animateWithDuration:0.25 animations:^{
         _label.alpha = 0;
     }];
 }
