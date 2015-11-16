@@ -50,9 +50,10 @@
 /// ラベル追加
 -(void)addLabel{
     _label = [[UILabel alloc] init];
-    _label.textAlignment = NSTextAlignmentRight;
+    _label.textAlignment = NSTextAlignmentCenter;
     _label.backgroundColor = [[UIColor alloc] initWithWhite:0 alpha:0.5];
     _label.layer.cornerRadius = 6;
+    _label.clipsToBounds = YES;
     _label.textColor = [UIColor whiteColor];
     [_scrollView.superview addSubview:_label];
     _label.layer.zPosition = 1000;
@@ -63,7 +64,14 @@
 
 -(void)updateLabelWithString:(NSString*)str{
     _label.text = str;
-    [_label sizeToFit];
+
+    CGSize maxSize = CGSizeMake(1000,1000);
+    CGSize newSize = [_label sizeThatFits:maxSize];
+    
+    CGRect frame = _label.frame;
+    frame.size = CGSizeMake(newSize.width + 10, newSize.height+10);
+    _label.frame = frame;
+    
     _label.layer.anchorPoint = CGPointMake(1, 0.5);
 }
 
