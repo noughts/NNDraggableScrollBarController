@@ -145,7 +145,12 @@
 	_knob_iv.center = CGPointMake( posX, posY );
     
     /// ラベルの位置も更新
-    [self updateLabelWithString:[NSString stringWithFormat:@"%@",@(posY)]];
+    if( [_dataSource respondsToSelector:@selector(scrollBarController:titleForPosition:)] ){
+        NSString* title = [_dataSource scrollBarController:self titleForPosition:_scrollView.contentOffset.y];
+        [self updateLabelWithString:[NSString stringWithFormat:@"%@",title]];
+    } else {
+        [self hideLabel];
+    }
     _label.center = CGPointMake(posX - 54, posY);
     
 }
