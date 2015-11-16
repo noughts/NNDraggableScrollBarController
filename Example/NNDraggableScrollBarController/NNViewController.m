@@ -22,6 +22,7 @@
 	UIImage* knob_img = [UIImage imageNamed:@"grid_scrollBarKnob"];
 	_scrollBarController = [[NNDraggableScrollBarController alloc] initWithScrollView:_tableView knobImage:knob_img];
     _scrollBarController.dataSource = self;
+    _scrollBarController.labelFontSize = 12;
 }
 
 

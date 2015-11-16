@@ -37,6 +37,23 @@
 }
 
 
+
+
+#pragma mark - public
+
+-(void)setLabelFontSize:(NSUInteger)labelFontSize{
+    _labelFontSize = labelFontSize;
+     _label.font = [UIFont systemFontOfSize:labelFontSize];
+}
+
+
+
+
+
+
+
+
+
 -(void)onTick:(NSTimer*)timer{
 //    NBULogInfo(@"_noMoveFrameCounter = %@", @(_noMoveFrameCounter));
     _noMoveFrameCounter++;
@@ -66,6 +83,7 @@
     _label.layer.cornerRadius = 6;
     _label.clipsToBounds = YES;
     _label.textColor = [UIColor whiteColor];
+    _label.font = [UIFont systemFontOfSize:12];
     [_scrollView.superview addSubview:_label];
     _label.layer.zPosition = 1000;
     _label.userInteractionEnabled = NO;

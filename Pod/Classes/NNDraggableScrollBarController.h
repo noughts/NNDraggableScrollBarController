@@ -12,6 +12,8 @@
 
 @interface NNDraggableScrollBarController : NSObject
 
+@property(nonatomic) NSUInteger labelFontSize;
+
 -(instancetype)initWithScrollView:(UIScrollView*)scrollView knobImage:(UIImage*)knobImage;
 @property(nonatomic,weak)id <NNDraggableScrollBarControllerDataSource> dataSource;
 
