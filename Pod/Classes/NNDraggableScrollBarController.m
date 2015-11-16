@@ -17,7 +17,8 @@
 	UIImageView* _knob_iv;
     UILabel* _label;
 	BOOL _knobDragging;
-    BOOL _isKnobHideTimerCancelled;
+    NSTimer* _hideKnob_timer;
+    NSUInteger _noMoveFrameCounter;
 }
 
 -(instancetype)initWithScrollView:(UIScrollView*)scrollView knobImage:(UIImage*)knobImage{
@@ -29,10 +30,20 @@
 		
         [self addKnobWithImage:knobImage];/// ノブを追加
         [self addLabel];
+        
+        _hideKnob_timer = [NSTimer scheduledTimerWithTimeInterval:1.0/30 target:self selector:@selector(onTick:) userInfo:nil repeats:YES];
 	}
 	return self;
 }
 
+
+-(void)onTick:(NSTimer*)timer{
+//    NBULogInfo(@"_noMoveFrameCounter = %@", @(_noMoveFrameCounter));
+    _noMoveFrameCounter++;
+    if( _noMoveFrameCounter == 30*1.5 ){
+        [self hideKnob];
+    }
+}
 
 /// ノブ追加
 -(void)addKnobWithImage:(UIImage*)knobImage{
@@ -77,17 +88,14 @@
 
 
 -(void)onKnobPan:(UIPanGestureRecognizer*)gr{
-    NBULogInfo(@"%@", @(gr.state));
 	switch (gr.state) {
 		case UIGestureRecognizerStateBegan:
-            _isKnobHideTimerCancelled = YES;
 			_knobDragging = YES;
 			[_scrollView setContentOffset:_scrollView.contentOffset animated:NO];/// スクロールを止める
 			break;
 		case UIGestureRecognizerStateCancelled:
 		case UIGestureRecognizerStateEnded:
 			_knobDragging = NO;
-            _isKnobHideTimerCancelled = NO;
 		default:
 			break;
 	}
@@ -159,13 +167,8 @@
 
 
 -(void)onScrollViewScroll:(NSDictionary*)sender{
-	if( _scrollView.dragging == 1 ){
-		[self showKnob];
-	} else {
-		if( _knobDragging == NO ){
-			[self hideKnob];
-		}
-	}
+    [self showKnob];
+    _noMoveFrameCounter = 0;
 	[self updateKnobPosition];
 }
 
@@ -184,8 +187,6 @@
 
 
 -(void)showKnob{
-    NBULogInfo(@"show");
-    _isKnobHideTimerCancelled = YES;
 	[UIView animateWithDuration:0.25 animations:^{
 		_knob_iv.alpha = 1;
         _label.alpha = 1;
@@ -194,18 +195,10 @@
 
 
 -(void)hideKnob{
-    NBULogInfo(@"hide");
-    _isKnobHideTimerCancelled = NO;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        if( _isKnobHideTimerCancelled ){
-            return;
-        }
-       	[UIView animateWithDuration:0.25 animations:^{
-            _knob_iv.alpha = 0;
-            _label.alpha = 0;
-        }];
-    });
-
+    [UIView animateWithDuration:0.25 animations:^{
+        _knob_iv.alpha = 0;
+        _label.alpha = 0;
+    }];
 }
 
 
