@@ -159,7 +159,6 @@
 
 
 -(void)onScrollViewScroll:(NSDictionary*)sender{
-    NBULogInfo(@"%@", sender);
 	if( _scrollView.dragging == 1 ){
 		[self showKnob];
 	} else {
