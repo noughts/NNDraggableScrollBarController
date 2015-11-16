@@ -15,6 +15,7 @@
 	__weak UIScrollView* _scrollView;
 	FBKVOController* _kvoController;
 	UIImageView* _knob_iv;
+    UILabel* _label;
 	BOOL _knobDragging;
     BOOL _isKnobHideTimerCancelled;
 }
@@ -26,21 +27,45 @@
 		_kvoController = [FBKVOController controllerWithObserver:self];
 		[_kvoController observe:_scrollView keyPath:@"contentOffset" options:NSKeyValueObservingOptionNew action:@selector(onScrollViewScroll:)];
 		
-		/// ノブを追加
-		_knob_iv = [[UIImageView alloc] initWithImage:knobImage];
-		[_scrollView.superview addSubview:_knob_iv];
-		_knob_iv.layer.zPosition = 1000;
-		_knob_iv.userInteractionEnabled = YES;
-		_scrollView.showsVerticalScrollIndicator = NO;
-		_knob_iv.alpha = 0;
-		
-		UIPanGestureRecognizer* gr = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onKnobPan:)];
-		[_knob_iv addGestureRecognizer:gr];
+        [self addKnobWithImage:knobImage];/// ノブを追加
+        [self addLabel];
 	}
 	return self;
 }
 
 
+/// ノブ追加
+-(void)addKnobWithImage:(UIImage*)knobImage{
+    _knob_iv = [[UIImageView alloc] initWithImage:knobImage];
+    [_scrollView.superview addSubview:_knob_iv];
+    _knob_iv.layer.zPosition = 1000;
+    _knob_iv.userInteractionEnabled = YES;
+    _scrollView.showsVerticalScrollIndicator = NO;
+    _knob_iv.alpha = 0;
+    
+    UIPanGestureRecognizer* gr = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onKnobPan:)];
+    [_knob_iv addGestureRecognizer:gr];
+}
+
+/// ラベル追加
+-(void)addLabel{
+    _label = [[UILabel alloc] init];
+    _label.textAlignment = NSTextAlignmentRight;
+    _label.backgroundColor = [[UIColor alloc] initWithWhite:0 alpha:0.5];
+    _label.layer.cornerRadius = 6;
+    _label.textColor = [UIColor whiteColor];
+    [_scrollView.superview addSubview:_label];
+    _label.layer.zPosition = 1000;
+    _label.userInteractionEnabled = NO;
+    
+}
+
+
+-(void)updateLabelWithString:(NSString*)str{
+    _label.text = str;
+    [_label sizeToFit];
+    _label.layer.anchorPoint = CGPointMake(1, 0.5);
+}
 
 
 -(void)onKnobPan:(UIPanGestureRecognizer*)gr{
@@ -99,6 +124,11 @@
 		posY = [self knobScrollBottomEnd];
 	}
 	_knob_iv.center = CGPointMake( posX, posY );
+    
+    /// ラベルの位置も更新
+    [self updateLabelWithString:[NSString stringWithFormat:@"%@",@(posY)]];
+    _label.center = CGPointMake(posX - 54, posY);
+    
 }
 
 
