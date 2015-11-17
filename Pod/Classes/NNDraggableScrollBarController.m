@@ -192,8 +192,8 @@
 
 
 -(void)onScrollViewScroll:(NSDictionary*)sender{
-	NBULogInfo(@"isDragging = %@", @(_scrollView.isDragging));
-	NBULogInfo(@"isTracking = %@", @(_scrollView.isTracking));
+//	NBULogInfo(@"isDragging = %@", @(_scrollView.isDragging));
+//	NBULogInfo(@"isTracking = %@", @(_scrollView.isTracking));
 	if( _scrollView.isDragging || _scrollView.isTracking || _knobDragging ){
 		 [self showKnob];
 	}
