@@ -192,7 +192,12 @@
 
 
 -(void)onScrollViewScroll:(NSDictionary*)sender{
-    [self showKnob];
+	NBULogInfo(@"isDragging = %@", @(_scrollView.isDragging));
+	NBULogInfo(@"isTracking = %@", @(_scrollView.isTracking));
+	if( _scrollView.isDragging || _scrollView.isTracking || _knobDragging ){
+		 [self showKnob];
+	}
+	
     _noMoveFrameCounter = 0;
 	[self updateKnobPosition];
     if( _scrollView.tracking ){
@@ -201,18 +206,7 @@
     }
 }
 
--(void)flashKnob{
-	[UIView animateWithDuration:0.25 animations:^{
-		_knob_iv.alpha = 1;
-	} completion:^(BOOL finished) {
-		if( finished == NO ){
-			return;
-		}
-		[UIView animateWithDuration:0.25 delay:1000 options:0 animations:^{
-			_knob_iv.alpha = 0;
-		} completion:nil];
-	}];
-}
+
 
 -(void)hideKnobAndLabel{
     [UIView animateWithDuration:0.25 animations:^{
@@ -223,6 +217,7 @@
 
 
 -(void)showKnob{
+//	NBULogInfo(@"showKnob");
 	[UIView animateWithDuration:0.25 animations:^{
 		_knob_iv.alpha = 1;
 	}];
